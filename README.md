@@ -15,14 +15,13 @@
   <br>
     :man_technologist: I’m currently learning web dev for Web 3.0
     <br>
-  I'm also into reading :books:, fitness :weight_lifting_man: and anime.
+  :books: I'm also into reading, fitness :weight_lifting_man: and anime.
 </p>
-<br>
-<hr>
 <br>
 
 ## :incoming_envelope: Connect with me:
 
+<p align="center">
 <a href="https://twitter.com/misterblack0101">
     <img src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" />
 </a>
@@ -38,21 +37,22 @@
 <a href="https://www.instagram.com/theharshmaroo/">
     <img src ="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
 </a>
-
-<br>
-<hr>
-<br>
-
-## 📈 And ofcourse, here are some stats
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=misterblack0101&langs_count=6&theme=cobalt&layout=compact"/>
+</p>
 
 <br>
 
+## 📈 And ofcourse, here are some stats:
+
+
+<br>
+<p align="center">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=misterblack0101&langs_count=6&theme=cobalt&layout=compact" class="center"/>
+<br/>
 <img width=46% src="https://github-readme-stats.vercel.app/api?username=misterblack0101&show_icons=true&theme=cobalt" />
 <emsp>
 <img width=46% src="https://github-readme-streak-stats.herokuapp.com/?user=misterblack0101&theme=cobalt" />
-
+</p>
+  
 <br>
 
 _BTW Here's [my resume :scroll:](https://drive.google.com/drive/folders/1DB4rMytMJGJR0O4ZPJy2-3AdRMdAaH2l?usp=sharing)_

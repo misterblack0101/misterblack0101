@@ -2,20 +2,18 @@
 
 <h1 align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com/?lines=Hi,+this+is+Harsh+Maroo;Nice+to+meet+you!+&center=true">
+    <img src="https://readme-typing-svg.herokuapp.com/?lines=Hi,+this+is+Harsh+Maroo;Software+Engineer+Extraordinaire!&center=true">
   </a>
 </h1>
 
 <p align="center">
-<img src="./images/Developer.gif" alt="developer gif"  height="45px">   Hi, I'm Harsh Maroo, a software developer from India 🇮🇳<br>
+<img src="./images/Developer.gif" alt="developer gif"  height="45px">   
+Hey! I'm Harsh Maroo, an experienced software engineer from India 🇮🇳<br>
   <br>
-    :iphone: A tech enthusiast who loves building apps with Flutter
+    💻 Expert in building fast, scalable apps with Flutter and Golang. <br>
+    🚀 I’m always chasing new tech challenges and creating next-gen digital experiences.
     <br>
-  👨‍🎓 A final year CSE student at S.B. Jain, Nagpur
-  <br>
-    :man_technologist: I’m currently learning web dev for Web 3.0
-    <br>
-  :books: I'm also into reading, fitness :weight_lifting_man: and anime.
+  :books: Outside of coding, I’m all about fitness, books, and anime.
 </p>
 <br>
 
@@ -45,8 +43,7 @@
 
 <br>
 
-## 📈 And ofcourse, here are some stats:
-
+## 📈 Check out my stats:
 
 <br>
 <p align="center">

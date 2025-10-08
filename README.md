@@ -2,18 +2,17 @@
 
 <h1 align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com/?lines=Hi,+this+is+Harsh+Maroo;Software+Engineer+Extraordinaire!&center=true">
+    <img src="https://readme-typing-svg.herokuapp.com/?lines=Hi,+this+is+Harsh+Maroo;Full-Stack+Flutter+Developer!&center=true">
   </a>
 </h1>
 
 <p align="center">
-<img src="./images/Developer.gif" alt="developer gif"  height="45px">   
-Hey! I'm Harsh Maroo, an experienced software engineer from India 🇮🇳<br>
-  <br>
-    💻 Expert in building fast, scalable apps with Flutter and Golang. <br>
-    🚀 I’m always chasing new tech challenges and creating next-gen digital experiences.
-    <br>
-  :books: Outside of coding, I’m all about fitness, books, and anime.
+<img src="./images/Developer.gif" alt="developer gif" height="45px">   
+Hey! I'm <b>Harsh Maroo</b> — a passionate software engineer from India 🇮🇳<br><br>
+💻 Experienced <b>Flutter Developer</b> who loves crafting fast, clean, and scalable apps.<br>
+⚙️ Skilled in <b>full-stack web development</b> — from building intuitive frontends to handling backend logic and databases.<br>
+🚀 I adapt quickly to project requirements and enjoy building polished, production-ready digital experiences.<br>
+:books: Outside of code, you’ll find me into <b>fitness, books, and anime</b>.
 </p>
 <br>
 

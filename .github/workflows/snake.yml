@@ -21,6 +21,20 @@ jobs:
             dist/snake-light.svg?color_snake=#e22928&color_dots=#ebedf0,#f7b9b8,#ef7473,#e22928,#8f1716
             dist/snake-dark.svg?color_snake=#e22928&color_dots=#161b22,#4a1212,#7d1a19,#b32120,#e22928
 
+      # round the progress bar's ends: clip its segments with one pill-shaped rect
+      - run: |
+          python3 - <<'EOF'
+          import pathlib, re
+          for p in pathlib.Path("dist").glob("*.svg"):
+              s = p.read_text()
+              m = re.search(r'(?:<rect class="u [^>]*/>)+', s)
+              r = [dict(re.findall(r'(\w+)="([\d.]+)"', t)) for t in re.findall(r"<rect[^>]*>", m[0])]
+              x0, x1 = min(float(a["x"]) for a in r), max(float(a["x"]) + float(a["width"]) for a in r)
+              y, h = r[0]["y"], float(r[0]["height"])
+              clip = f'<clipPath id="pb"><rect x="{x0}" y="{y}" width="{x1 - x0}" height="{h}" rx="{h / 2}"/></clipPath>'
+              p.write_text(s[:m.start()] + f'{clip}<g clip-path="url(#pb)">{m[0]}</g>' + s[m.end():])
+          EOF
+
       - uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output

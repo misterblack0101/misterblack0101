@@ -23,6 +23,7 @@ jobs:
 
       # round the progress bar's ends: clip its segments with one pill-shaped rect
       - run: |
+          sudo chown -R "$USER" dist  # snk's docker step writes it as root
           python3 - <<'EOF'
           import pathlib, re
           for p in pathlib.Path("dist").glob("*.svg"):

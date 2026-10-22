@@ -73,10 +73,39 @@ def heading(label, title, fg):
                f'<text y="94" font-size="62" font-weight="700" fill="{fg}" letter-spacing="-2">{esc(title)}</text>')
 
 
-def button(text, primary):
-    size, padx, h = 26, 34, 64
-    w = round(width(text, 700, size) + 2 * padx)
-    bg, fg, stroke = (RED, "#fff", RED) if primary else ("#0a0a0a", "#fff", "#ffffff33")
+def hero(fg, muted, panel):
+    lines = ["I write code so your phone does cool things.", "Powered by Flutter & AI.", "Loved by 3M+ users."]
+    n = len(lines)
+    rotating = "".join(
+        f'<text class="t" x="0" y="268" font-size="30" fill="{muted}" style="animation-delay:{i * 3}s">{esc(t)}</text>'
+        for i, t in enumerate(lines))
+    # phone mockup: cards slide in one after another, then the loop restarts
+    cards = "".join(
+        f'<rect class="k" x="902" y="{96 + i * 58}" width="{196 - i * 30}" height="42" rx="12" fill="{RED if i == 0 else panel}" '
+        f'style="animation-delay:{i * .35}s"/>' for i in range(4))
+    body = (
+        f'<text x="2" y="70" font-size="20" font-weight="700" fill="{RED}" letter-spacing="4">FLUTTER · AI · 3M+ USERS</text>'
+        f'<text y="196" font-size="132" font-weight="700" fill="{fg}" letter-spacing="-5">Hi, I\'m <tspan fill="{RED}">Harsh</tspan>'
+        f'<tspan class="cur" fill="{RED}">_</tspan></text>'
+        f'{rotating}'
+        f'<g class="ph"><rect x="884" y="40" width="232" height="300" rx="36" fill="none" stroke="{fg}" stroke-opacity=".25" stroke-width="3"/>'
+        f'<rect x="966" y="56" width="68" height="10" rx="5" fill="{fg}" fill-opacity=".2"/>{cards}'
+        f'<circle class="dot" cx="1110" cy="46" r="14" fill="{RED}"/></g>')
+    css = (f".t{{opacity:0;animation:rot {3 * n}s infinite}}"
+           f"@keyframes rot{{0%{{opacity:0;transform:translateY(12px)}}4%,{100 / n - 4:.0f}%{{opacity:1;transform:none}}"
+           f"{100 / n:.0f}%,100%{{opacity:0;transform:translateY(-12px)}}}}"
+           ".cur{animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}"
+           ".k{opacity:0;animation:k 4s cubic-bezier(.2,.8,.2,1) infinite}"
+           "@keyframes k{0%{opacity:0;transform:translateX(30px)}15%,85%{opacity:1;transform:none}100%{opacity:0}}"
+           ".ph{animation:float 6s ease-in-out infinite}@keyframes float{50%{transform:translateY(-10px)}}"
+           ".dot{transform-origin:1110px 46px;animation:pulse 2s infinite}@keyframes pulse{50%{transform:scale(.7);opacity:.6}}")
+    return svg(1200, 360, body, css, weights=(400, 700))
+
+
+def button(text, primary, w):
+    size, h = 26, 64
+    # transparent outline reads on both light and dark GitHub themes
+    bg, fg, stroke = (RED, "#fff", RED) if primary else ("none", RED, RED)
     return svg(w, h,
                f'<rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="{h / 2 - 1}" fill="{bg}" stroke="{stroke}" stroke-width="2"/>'
                f'<text x="{w / 2}" y="{h / 2 + 9}" text-anchor="middle" font-size="{size}" font-weight="700" fill="{fg}">{esc(text)}</text>')
@@ -91,11 +120,14 @@ if __name__ == "__main__":
             ("4+ yrs", "Shipping Flutter", "Lead Flutter Dev @ Lingopanda"),
             ("99%", "Crash-free", "High-reliability monitoring"),
         ]),
-        "btn-work.svg": button("See my work ↗", True),
-        "btn-linkedin.svg": button("LinkedIn", False),
-        "btn-email.svg": button("Email", False),
-        "btn-resume.svg": button("Resume", False),
+        "hero-dark.svg": hero("#ffffff", "#ffffffb3", "#ffffff26"),
+        "hero-light.svg": hero("#0a0a0a", "#0a0a0ab3", "#0a0a0a1a"),
     }
+    # equal widths so the row lines up as one block
+    btns = [("work", "See my work ↗"), ("linkedin", "LinkedIn ↗"), ("email", "Email ↗"), ("resume", "Resume ↗")]
+    bw = round(max(width(t, 700, 26) for _, t in btns) + 68)
+    for i, (key, text) in enumerate(btns):
+        files[f"btn-{key}.svg"] = button(text, i == 0, bw)
     for key, label, title in [("scale", "Track record & scale", "Experience"),
                               ("arsenal", "Tech arsenal", "Stack"),
                               ("activity", "Always shipping", "Activity")]:
